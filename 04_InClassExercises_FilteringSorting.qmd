@@ -63,6 +63,7 @@ impeach %>%
 impeach %>%
   filter(for_impeachment == "NO", p16winningparty == "R")
 
+#now filtering to districts where republican (Trump) won
 
 ```
 
@@ -75,6 +76,7 @@ impeach %>%
   filter(for_impeachment == "NO", p16winningparty == "R", p12winningparty == "R")
 
 
+#adding the republican vote from romney v obama election
 
 ```
 
@@ -86,6 +88,7 @@ impeach %>%
   filter(for_impeachment == "YES", date_month == "9", date_year == "2019")
 
 
+# using state and year columns for date
 
 ```
 
@@ -98,6 +101,7 @@ impeach %>%
   filter(for_impeachment == "YES", clinton_percent >= 70)
 
 
+# greater than or equal to 70.. not sure if it should just be greater than 70 
 
 ```
 
@@ -139,6 +143,7 @@ impeach %>%
   filter(pct_bachelors_compared_to_national == "BELOW")
 
 
+# Filtering the results of arrange function
 
 ```
 
@@ -160,7 +165,8 @@ impeach %>%
 
 impeach %>%
   filter(for_impeachment == "YES", date_year < "2019")  %>%
-  arrange(clinton_percent)
+  arrange(-clinton_percent)
 
+#using - sign for highest to lowest
 
 ```
